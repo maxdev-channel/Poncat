@@ -1,0 +1,6 @@
+{
+  "name": "Ponkotsu Cat $PONCAT",
+  "description": "$PONCAT — Clumsy, lovable, and packed with chaotic fun! Ponkotsu Cat is the ultimate meme coin on Robinhood Chain L2.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    display: inline-block;
+    animation: marquee 22s linear infinite;
+  }
+
+  .pixel-image {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  .pixel-box-green {
+    background-color: #00C805;
+    box-shadow: 4px 4px 0px 0px #000000, 8px 8px 0px 0px #ffffff;
+  }
+
+  .pixel-box-gold {
+    background-color: #FFD700;
+    box-shadow: 4px 4px 0px 0px #000000, 8px 8px 0px 0px #00C805;
+  }
+
+  .scanlines {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.03),
+      rgba(0, 255, 0, 0.01),
+      rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 4px, 6px 100%;
+  }
+
+  .pixel-grid-pattern {
+    background-image: radial-gradient(#00C805 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+  }
+
+  .pixel-grid-gold {
+    background-image: radial-gradient(#FFD700 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #060a08;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Courier New', Courier, monospace, system-ui, -apple-system, sans-serif;
+}
