@@ -4,8 +4,16 @@ export const CONTRACT_ADDRESS = "0x000000000000000000000000000000";
 export const ROBINHOOD_CHAIN_NAME = "Robinhood Chain";
 export const TOKEN_SYMBOL = "$PONCAT";
 export const TOKEN_NAME = "Ponkotsu Cat $PONCAT";
-export const WEBSITE_LOGO = "https://sf4service.site/raw/img_mz5sm7cpd.jpg";
-export const WEBSITE_BANNER = "https://sf4service.site/raw/img_pvzj8bo88.png";
+export const getProxyUrl = (url: string): string => {
+  if (!url) return "";
+  if (url.startsWith("https://sf4service.site")) {
+    return `/api/proxy-image?url=${encodeURIComponent(url)}`;
+  }
+  return url;
+};
+
+export const WEBSITE_LOGO = getProxyUrl("https://sf4service.site/raw/img_mz5sm7cpd.jpg");
+export const WEBSITE_BANNER = getProxyUrl("https://sf4service.site/raw/img_l2iigqp12.jpg");
 
 export const ROBINHOOD_RPC_CONFIG: RpcConfig = {
   networkName: "Robinhood Chain Mainnet",

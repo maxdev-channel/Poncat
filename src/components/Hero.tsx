@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Copy, Check, ArrowRight, ShieldCheck, Zap, TrendingUp, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
-import { CONTRACT_ADDRESS, INITIAL_STATS, TOKEN_SYMBOL, ROBINHOOD_CHAIN_NAME, WEBSITE_LOGO, WEBSITE_BANNER } from '../data/memeData';
+import { CONTRACT_ADDRESS, INITIAL_STATS, TOKEN_SYMBOL, ROBINHOOD_CHAIN_NAME, WEBSITE_LOGO, WEBSITE_BANNER, getProxyUrl } from '../data/memeData';
 import { useDexscreenerStats } from '../hooks/useDexscreenerStats';
 import { playSound } from '../utils/audio';
 import confetti from 'canvas-confetti';
@@ -13,11 +13,13 @@ interface HeroProps {
 
 const BANNERS = [
   "https://sf4service.site/raw/img_pvzj8bo88.png", // Ponkotsu Cat Abbey Road Crossing
-  "https://sf4service.site/raw/img_05b30b6rl.png", // Ponkotsu Cat Cyber Lounge
-  "https://sf4service.site/raw/img_8e8trgvyn.png", // Ponkotsu Cat Neon Throne
   "https://sf4service.site/raw/img_4qqjefs5c.png", // Ponkotsu Cat shipping label
-  "https://sf4service.site/raw/img_0qunr0zdy.png"  // Ponkotsu Cat Matrix sunglasses
-];
+  "https://sf4service.site/raw/img_05b30b6rl.png", // Ponkotsu Cat Cyber Lounge
+  "https://sf4service.site/raw/img_0qunr0zdy.png", // Ponkotsu Cat Matrix sunglasses
+  "https://sf4service.site/raw/img_8e8trgvyn.png", // Ponkotsu Cat Neon Throne
+  "https://sf4service.site/raw/img_qz2q3bbv9.png", // Ponkotsu Cat Golden Vault
+  "https://sf4service.site/raw/img_buuymu1l0.png"  // Ponkotsu Cat Community Pride
+].map(url => getProxyUrl(url));
 
 export const Hero: React.FC<HeroProps> = ({ muted, onNavigate }) => {
   const dexscreener = useDexscreenerStats();

@@ -4,7 +4,7 @@ import { Image as ImageIcon, Download, Share2, Check, ExternalLink, Loader2 } fr
 import { playSound } from '../utils/audio';
 import confetti from 'canvas-confetti';
 import { downloadImageWithCaption } from '../utils/downloadWithCaption';
-import { TOKEN_SYMBOL, WEBSITE_BANNER, WEBSITE_LOGO } from '../data/memeData';
+import { TOKEN_SYMBOL, WEBSITE_BANNER, WEBSITE_LOGO, getProxyUrl } from '../data/memeData';
 
 interface PromoGalleryProps {
   muted: boolean;
@@ -53,7 +53,7 @@ const PROMO_BANNERS = [
     url: 'https://sf4service.site/raw/img_buuymu1l0.png',
     badge: 'Community Pride'
   }
-];
+].map(item => ({ ...item, url: getProxyUrl(item.url) }));
 
 export const PromoGallery: React.FC<PromoGalleryProps> = ({ muted }) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);

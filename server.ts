@@ -2,6 +2,9 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 
+// Allow proxy to request images from servers with incomplete SSL certificate chains
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 async function startServer() {
   const app = express();
   const PORT = 3000;

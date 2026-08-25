@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, Download, Check, ChevronDown, ChevronUp, Image as ImageIcon, MessageSquareQuote, Loader2 } from 'lucide-react';
-import { FAQ_LIST, TOKEN_SYMBOL } from '../data/memeData';
+import { FAQ_LIST, TOKEN_SYMBOL, getProxyUrl } from '../data/memeData';
 import { playSound } from '../utils/audio';
 import confetti from 'canvas-confetti';
 import { downloadImageWithCaption } from '../utils/downloadWithCaption';
@@ -12,7 +12,7 @@ const MEME_TEMPLATES = [
   { id: '5', name: 'Trading Terminal', url: 'https://sf4service.site/raw/img_8e8trgvyn.png' },
   { id: '6', name: 'Golden Vault', url: 'https://sf4service.site/raw/img_qz2q3bbv9.png' },
   { id: '7', name: 'Community Pride', url: 'https://sf4service.site/raw/img_buuymu1l0.png' }
-];
+].map(item => ({ ...item, url: getProxyUrl(item.url) }));
 
 interface MemeHubProps {
   muted: boolean;
