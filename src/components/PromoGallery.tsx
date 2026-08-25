@@ -13,47 +13,41 @@ interface PromoGalleryProps {
 const PROMO_BANNERS = [
   {
     id: 'banner-poncat-1',
-    title: 'Ponkotsu Cat Mission Control',
-    url: 'https://sf4service.site/raw/img_pvzj8bo88.png',
-    badge: 'Mission Control'
+    title: 'Ponkotsu Cat Artwork 1',
+    url: '/images/img_1.png',
+    badge: 'Concept Art'
   },
   {
     id: 'banner-poncat-2',
-    title: 'Ponkotsu Cat Ecosystem Card',
-    url: 'https://sf4service.site/raw/img_4qqjefs5c.png',
-    badge: 'Ecosystem Card'
+    title: 'Ponkotsu Cat Artwork 2',
+    url: '/images/img_2.png',
+    badge: 'Ecosystem'
   },
   {
     id: 'banner-poncat-3',
-    title: 'Ponkotsu Cat Cyber Lounge',
-    url: 'https://sf4service.site/raw/img_05b30b6rl.png',
+    title: 'Ponkotsu Cat Artwork 3',
+    url: '/images/img_3.png',
     badge: 'Cyber Lounge'
   },
   {
     id: 'banner-poncat-4',
-    title: 'Ponkotsu Cat Mascot Frame',
-    url: 'https://sf4service.site/raw/img_0qunr0zdy.png',
-    badge: 'Mascot Frame'
+    title: 'Ponkotsu Cat Artwork 4',
+    url: '/images/img_4.png',
+    badge: 'Matrix Edition'
   },
   {
     id: 'banner-poncat-5',
-    title: 'Ponkotsu Cat Trading Terminal',
-    url: 'https://sf4service.site/raw/img_8e8trgvyn.png',
-    badge: 'Terminal Art'
+    title: 'Ponkotsu Cat Artwork 5',
+    url: '/images/img_5.png',
+    badge: 'Neon Throne'
   },
   {
     id: 'banner-poncat-6',
-    title: 'Ponkotsu Cat Golden Vault',
-    url: 'https://sf4service.site/raw/img_qz2q3bbv9.png',
+    title: 'Ponkotsu Cat Artwork 6',
+    url: '/images/img_6.png',
     badge: 'Golden Vault'
-  },
-  {
-    id: 'banner-poncat-7',
-    title: 'Ponkotsu Cat Community Pride',
-    url: 'https://sf4service.site/raw/img_buuymu1l0.png',
-    badge: 'Community Pride'
   }
-].map(item => ({ ...item, url: getProxyUrl(item.url) }));
+];
 
 export const PromoGallery: React.FC<PromoGalleryProps> = ({ muted }) => {
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);

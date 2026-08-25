@@ -5,15 +5,11 @@ export const ROBINHOOD_CHAIN_NAME = "Robinhood Chain";
 export const TOKEN_SYMBOL = "$PONCAT";
 export const TOKEN_NAME = "Ponkotsu Cat $PONCAT";
 export const getProxyUrl = (url: string): string => {
-  if (!url) return "";
-  if (url.startsWith("https://sf4service.site/raw/")) {
-    return `/images/${url.substring("https://sf4service.site/raw/".length)}`;
-  }
   return url;
 };
 
-export const WEBSITE_LOGO = getProxyUrl("https://sf4service.site/raw/img_mz5sm7cpd.jpg");
-export const WEBSITE_BANNER = getProxyUrl("https://sf4service.site/raw/img_l2iigqp12.jpg");
+export const WEBSITE_LOGO = "/images/logo.jpg";
+export const WEBSITE_BANNER = "/images/banner.jpg";
 
 export const ROBINHOOD_RPC_CONFIG: RpcConfig = {
   networkName: "Robinhood Chain Mainnet",

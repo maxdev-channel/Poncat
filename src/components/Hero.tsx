@@ -12,14 +12,13 @@ interface HeroProps {
 }
 
 const BANNERS = [
-  "https://sf4service.site/raw/img_pvzj8bo88.png", // Ponkotsu Cat Abbey Road Crossing
-  "https://sf4service.site/raw/img_4qqjefs5c.png", // Ponkotsu Cat shipping label
-  "https://sf4service.site/raw/img_05b30b6rl.png", // Ponkotsu Cat Cyber Lounge
-  "https://sf4service.site/raw/img_0qunr0zdy.png", // Ponkotsu Cat Matrix sunglasses
-  "https://sf4service.site/raw/img_8e8trgvyn.png", // Ponkotsu Cat Neon Throne
-  "https://sf4service.site/raw/img_qz2q3bbv9.png", // Ponkotsu Cat Golden Vault
-  "https://sf4service.site/raw/img_buuymu1l0.png"  // Ponkotsu Cat Community Pride
-].map(url => getProxyUrl(url));
+  "/images/img_1.png",
+  "/images/img_2.png",
+  "/images/img_3.png",
+  "/images/img_4.png",
+  "/images/img_5.png",
+  "/images/img_6.png"
+];
 
 export const Hero: React.FC<HeroProps> = ({ muted, onNavigate }) => {
   const dexscreener = useDexscreenerStats();

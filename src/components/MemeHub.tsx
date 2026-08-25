@@ -5,14 +5,13 @@ import { playSound } from '../utils/audio';
 import confetti from 'canvas-confetti';
 import { downloadImageWithCaption } from '../utils/downloadWithCaption';
 const MEME_TEMPLATES = [
-  { id: '1', name: 'Mission Control', url: 'https://sf4service.site/raw/img_pvzj8bo88.png' },
-  { id: '2', name: 'Ecosystem Card', url: 'https://sf4service.site/raw/img_4qqjefs5c.png' },
-  { id: '3', name: 'Cyber Lounge', url: 'https://sf4service.site/raw/img_05b30b6rl.png' },
-  { id: '4', name: 'Mascot Frame', url: 'https://sf4service.site/raw/img_0qunr0zdy.png' },
-  { id: '5', name: 'Trading Terminal', url: 'https://sf4service.site/raw/img_8e8trgvyn.png' },
-  { id: '6', name: 'Golden Vault', url: 'https://sf4service.site/raw/img_qz2q3bbv9.png' },
-  { id: '7', name: 'Community Pride', url: 'https://sf4service.site/raw/img_buuymu1l0.png' }
-].map(item => ({ ...item, url: getProxyUrl(item.url) }));
+  { id: '1', name: 'Concept Art', url: '/images/img_1.png' },
+  { id: '2', name: 'Ecosystem', url: '/images/img_2.png' },
+  { id: '3', name: 'Cyber Lounge', url: '/images/img_3.png' },
+  { id: '4', name: 'Matrix Edition', url: '/images/img_4.png' },
+  { id: '5', name: 'Neon Throne', url: '/images/img_5.png' },
+  { id: '6', name: 'Golden Vault', url: '/images/img_6.png' }
+];
 
 interface MemeHubProps {
   muted: boolean;
