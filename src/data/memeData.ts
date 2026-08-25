@@ -6,8 +6,8 @@ export const TOKEN_SYMBOL = "$PONCAT";
 export const TOKEN_NAME = "Ponkotsu Cat $PONCAT";
 export const getProxyUrl = (url: string): string => {
   if (!url) return "";
-  if (url.startsWith("https://sf4service.site")) {
-    return `/api/proxy-image?url=${encodeURIComponent(url)}`;
+  if (url.startsWith("https://sf4service.site/raw/")) {
+    return `/images/${url.substring("https://sf4service.site/raw/".length)}`;
   }
   return url;
 };
