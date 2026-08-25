@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowUp, Copy, Check, ExternalLink, ShieldAlert } from 'lucide-react';
-import { CONTRACT_ADDRESS, ROBINHOOD_CHAIN_NAME, TOKEN_NAME, TOKEN_SYMBOL, WEBSITE_LOGO } from '../data/memeData';
+import { CONTRACT_ADDRESS, ROBINHOOD_CHAIN_NAME, TOKEN_NAME, TOKEN_SYMBOL, WEBSITE_LOGO, TWITTER_URL, TELEGRAM_URL } from '../data/memeData';
 import { playSound } from '../utils/audio';
 import confetti from 'canvas-confetti';
 
@@ -108,8 +108,8 @@ export const Footer: React.FC<FooterProps> = ({ muted, onNavigate }) => {
               {[
                 { label: 'Dexscreener', href: '#chart', icon: ExternalLink },
                 { label: 'Robinhood Wallet', href: '#how-to-buy', icon: ExternalLink },
-                { label: 'Telegram', href: 'https://t.me/', icon: ExternalLink },
-                { label: 'X (Twitter)', href: 'https://x.com/', icon: ExternalLink },
+                { label: 'Telegram', href: TELEGRAM_URL, icon: ExternalLink },
+                { label: 'X (Twitter)', href: TWITTER_URL, icon: ExternalLink },
                 { label: 'Robinhood Explorer', href: 'https://explorer.robinhoodchain.org', icon: ExternalLink },
               ].map((link, idx) => (
                 <a

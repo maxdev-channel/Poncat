@@ -1,9 +1,11 @@
 import { ChartPoint, HowToBuyStep, RpcConfig, TokenomicItem, TradeOrder } from '../types';
 
-export const CONTRACT_ADDRESS = "0x000000000000000000000000000000";
+export const CONTRACT_ADDRESS = "0x7a3488048b309f7a8015dc71e84023499b09cb71";
 export const ROBINHOOD_CHAIN_NAME = "Robinhood Chain";
 export const TOKEN_SYMBOL = "$PONCAT";
 export const TOKEN_NAME = "Ponkotsu Cat $PONCAT";
+export const TWITTER_URL = "https://x.com/poncatfamily";
+export const TELEGRAM_URL = "https://t.me/Poncatfamily";
 export const getProxyUrl = (url: string): string => {
   return url;
 };

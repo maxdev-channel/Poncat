@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, Copy, Check, ArrowRight, Menu, X } from 'lucide-react';
-import { CONTRACT_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, WEBSITE_LOGO } from '../data/memeData';
+import { Volume2, VolumeX, Copy, Check, ArrowRight, Menu, X, Send } from 'lucide-react';
+import { CONTRACT_ADDRESS, TOKEN_NAME, TOKEN_SYMBOL, WEBSITE_LOGO, TWITTER_URL, TELEGRAM_URL } from '../data/memeData';
 import { playSound } from '../utils/audio';
 import confetti from 'canvas-confetti';
 
@@ -93,6 +93,30 @@ export const Navbar: React.FC<NavbarProps> = ({ muted, setMuted, onNavigate }) =
 
         {/* Right Action Controls */}
         <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
+          {/* Social Links on Desktop */}
+          <div className="hidden md:flex items-center gap-1.5">
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => playSound('pop', muted)}
+              title="Official X (Twitter)"
+              className="p-1.5 bg-[#121c17] hover:bg-[#00C805] hover:text-black text-gray-200 border-2 border-black shadow-[2px_2px_0px_0px_#ffffff] text-xs font-mono font-black transition-all flex items-center justify-center w-8 h-8"
+            >
+              X
+            </a>
+            <a
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => playSound('pop', muted)}
+              title="Official Telegram"
+              className="p-1.5 bg-[#121c17] hover:bg-[#00E5FF] hover:text-black text-[#00E5FF] border-2 border-black shadow-[2px_2px_0px_0px_#00E5FF] text-xs font-mono font-black transition-all flex items-center justify-center w-8 h-8"
+            >
+              <Send className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
           {/* Mute/Unmute 8-Bit Audio */}
           <button
             onClick={() => {
@@ -118,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ muted, setMuted, onNavigate }) =
           {/* Buy Button CTA */}
           <button
             onClick={() => handleNavClick('how-to-buy')}
-            className="hidden sm:flex items-center gap-1.5 bg-[#00C805] hover:bg-[#00E506] text-black font-mono font-black text-xs px-3.5 py-2 border-3 border-black shadow-[2.5px_2.5px_0px_0px_#ffffff] hover:translate-x-[1px] hover:translate-y-[1px] transition-all uppercase flex-shrink-0"
+            className="hidden sm:flex items-center gap-1.5 bg-[#00C805] hover:bg-[#00E506] text-black font-mono font-black text-xs px-3.5 py-2 border-3 border-black shadow-[2.5px_2.5px_0px_0px_#ffffff] hover:translate-x-[1px] hover:translate-y-[1px] transition-all uppercase flex-shrink-0 cursor-pointer"
           >
             <span>Buy {TOKEN_SYMBOL}</span>
             <ArrowRight className="w-3.5 h-3.5 stroke-[3]" />
@@ -156,6 +180,29 @@ export const Navbar: React.FC<NavbarProps> = ({ muted, setMuted, onNavigate }) =
                 {item.label}
               </button>
             ))}
+          </div>
+
+          {/* Mobile Social Links */}
+          <div className="grid grid-cols-2 gap-2 pt-1">
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => playSound('pop', muted)}
+              className="flex items-center justify-center gap-1.5 py-2 bg-[#16221b] hover:bg-white hover:text-black text-xs font-black border-2 border-black text-white uppercase"
+            >
+              <span>X (Twitter)</span>
+            </a>
+            <a
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => playSound('pop', muted)}
+              className="flex items-center justify-center gap-1.5 py-2 bg-[#16221b] hover:bg-[#00E5FF] hover:text-black text-xs font-black border-2 border-black text-[#00E5FF] uppercase"
+            >
+              <Send className="w-3.5 h-3.5" />
+              <span>Telegram</span>
+            </a>
           </div>
 
           <div className="pt-2 border-t border-white/10 flex flex-col sm:flex-row gap-2">

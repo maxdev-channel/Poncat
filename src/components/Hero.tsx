@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Copy, Check, ArrowRight, ShieldCheck, Zap, TrendingUp, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
-import { CONTRACT_ADDRESS, INITIAL_STATS, TOKEN_SYMBOL, ROBINHOOD_CHAIN_NAME, WEBSITE_LOGO, WEBSITE_BANNER, getProxyUrl } from '../data/memeData';
+import { Copy, Check, ArrowRight, ShieldCheck, Zap, TrendingUp, Sparkles, ChevronLeft, ChevronRight, ExternalLink, Send } from 'lucide-react';
+import { CONTRACT_ADDRESS, INITIAL_STATS, TOKEN_SYMBOL, ROBINHOOD_CHAIN_NAME, WEBSITE_LOGO, WEBSITE_BANNER, getProxyUrl, TWITTER_URL, TELEGRAM_URL } from '../data/memeData';
 import { useDexscreenerStats } from '../hooks/useDexscreenerStats';
 import { playSound } from '../utils/audio';
 import confetti from 'canvas-confetti';
@@ -216,7 +216,7 @@ export const Hero: React.FC<HeroProps> = ({ muted, onNavigate }) => {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
               <button
                 onClick={handleBuyClick}
-                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#00C805] hover:bg-[#00E506] text-black font-mono font-black text-lg px-8 py-4 border-4 border-black shadow-[5px_5px_0px_0px_#ffffff] hover:translate-x-[2px] hover:translate-y-[2px] transition-all uppercase group"
+                className="w-full sm:w-auto flex items-center justify-center gap-3 bg-[#00C805] hover:bg-[#00E506] text-black font-mono font-black text-lg px-8 py-4 border-4 border-black shadow-[5px_5px_0px_0px_#ffffff] hover:translate-x-[2px] hover:translate-y-[2px] transition-all uppercase group cursor-pointer"
               >
                 <span>Buy {TOKEN_SYMBOL} Now</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[3]" />
@@ -224,11 +224,38 @@ export const Hero: React.FC<HeroProps> = ({ muted, onNavigate }) => {
 
               <button
                 onClick={() => onNavigate('chart')}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1b2821] hover:bg-[#283b31] text-white font-mono font-black text-base px-6 py-4 border-4 border-black shadow-[5px_5px_0px_0px_#FFD700] hover:translate-x-[2px] hover:translate-y-[2px] transition-all uppercase"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#1b2821] hover:bg-[#283b31] text-white font-mono font-black text-base px-6 py-4 border-4 border-black shadow-[5px_5px_0px_0px_#FFD700] hover:translate-x-[2px] hover:translate-y-[2px] transition-all uppercase cursor-pointer"
               >
                 <TrendingUp className="w-5 h-5 text-[#00C805]" />
                 <span>Live Dex Chart</span>
               </button>
+            </div>
+
+            {/* Official Community Socials Row */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1">
+              <a
+                href={TWITTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playSound('pop', muted)}
+                className="flex items-center gap-2 bg-[#121c16] hover:bg-[#1a2820] text-white font-mono font-black text-xs px-4 py-2.5 border-3 border-black shadow-[3px_3px_0px_0px_#ffffff] hover:translate-x-[1px] hover:translate-y-[1px] transition-all uppercase"
+              >
+                <span className="bg-white text-black px-1.5 py-0.2 text-[10px] font-black border border-black">X</span>
+                <span>Join X Community</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#00C805]" />
+              </a>
+
+              <a
+                href={TELEGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playSound('pop', muted)}
+                className="flex items-center gap-2 bg-[#121c16] hover:bg-[#1a2820] text-[#00E5FF] font-mono font-black text-xs px-4 py-2.5 border-3 border-black shadow-[3px_3px_0px_0px_#00E5FF] hover:translate-x-[1px] hover:translate-y-[1px] transition-all uppercase"
+              >
+                <Send className="w-3.5 h-3.5 fill-[#00E5FF] text-[#00E5FF]" />
+                <span className="text-white">Telegram Channel</span>
+                <ExternalLink className="w-3.5 h-3.5 text-[#00E5FF]" />
+              </a>
             </div>
 
             {/* Contract Address Interactive Pixel Box */}
